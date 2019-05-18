@@ -13,7 +13,7 @@
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="DayEight_GoogleBooksSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="GoogleBooksMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
         <!--Detail View Controller-->
         <scene sceneID="AHl-Hl-YBA">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="Y7T-OD-8Ge" customClass="DetailViewController" customModule="DayEight_GoogleBooksSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Y7T-OD-8Ge" customClass="DetailViewController" customModule="GoogleBooksMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MNY-fu-S83">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +94,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wuo-wK-5Gj">
-                                                <rect key="frame" x="40" y="490" width="334" height="340"/>
+                                                <rect key="frame" x="40" y="490" width="334" height="315"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -137,6 +137,16 @@
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTJ-Fk-taz">
+                                                <rect key="frame" x="100" y="835" width="214" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Preview">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="previewButtonTapped:" destination="Y7T-OD-8Ge" eventType="touchUpInside" id="qvL-MN-UJo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -145,11 +155,11 @@
                                             <constraint firstAttribute="trailing" secondItem="UbF-31-vmb" secondAttribute="trailing" constant="60" id="9BQ-z1-vMp"/>
                                             <constraint firstAttribute="trailing" secondItem="I1j-kf-T4g" secondAttribute="trailing" constant="100" id="Ack-bE-QSj"/>
                                             <constraint firstItem="UbF-31-vmb" firstAttribute="top" secondItem="oqU-RY-alu" secondAttribute="bottom" constant="30" id="CRf-z2-fMn"/>
+                                            <constraint firstAttribute="trailing" secondItem="KTJ-Fk-taz" secondAttribute="trailing" constant="100" id="Cxt-jD-Ug9"/>
                                             <constraint firstItem="oqU-RY-alu" firstAttribute="top" secondItem="v0o-dm-psg" secondAttribute="top" id="DqE-ds-CwE"/>
                                             <constraint firstItem="KOz-hG-hUE" firstAttribute="top" secondItem="er8-7n-Pag" secondAttribute="bottom" constant="10" id="Lg9-lu-qw0"/>
                                             <constraint firstItem="I1j-kf-T4g" firstAttribute="leading" secondItem="v0o-dm-psg" secondAttribute="leading" constant="100" id="MZy-h7-G5U"/>
                                             <constraint firstItem="UbF-31-vmb" firstAttribute="leading" secondItem="Tqd-VQ-fh8" secondAttribute="trailing" constant="30" id="OwH-2u-jfO"/>
-                                            <constraint firstItem="I1j-kf-T4g" firstAttribute="top" secondItem="Wuo-wK-5Gj" secondAttribute="bottom" constant="60" id="P1v-AL-N8n"/>
                                             <constraint firstItem="Tqd-VQ-fh8" firstAttribute="leading" secondItem="v0o-dm-psg" secondAttribute="leading" constant="40" id="QZx-Be-baM"/>
                                             <constraint firstItem="Wuo-wK-5Gj" firstAttribute="top" secondItem="rR4-yu-CRJ" secondAttribute="bottom" id="QxA-JO-cfb"/>
                                             <constraint firstAttribute="trailing" secondItem="Wuo-wK-5Gj" secondAttribute="trailing" constant="40" id="ShZ-gt-h4D"/>
@@ -162,7 +172,10 @@
                                             <constraint firstItem="oqU-RY-alu" firstAttribute="leading" secondItem="v0o-dm-psg" secondAttribute="leading" constant="30" id="em7-5g-cEE"/>
                                             <constraint firstItem="Wuo-wK-5Gj" firstAttribute="leading" secondItem="v0o-dm-psg" secondAttribute="leading" constant="40" id="eub-UD-5Xq"/>
                                             <constraint firstAttribute="height" constant="1000" id="gXc-Fp-jxg"/>
+                                            <constraint firstItem="I1j-kf-T4g" firstAttribute="top" secondItem="KTJ-Fk-taz" secondAttribute="bottom" constant="25" id="gfh-Jq-kjO"/>
                                             <constraint firstAttribute="trailing" secondItem="KOz-hG-hUE" secondAttribute="trailing" constant="40" id="hnm-2J-URf"/>
+                                            <constraint firstItem="KTJ-Fk-taz" firstAttribute="top" secondItem="Wuo-wK-5Gj" secondAttribute="bottom" constant="30" id="kGf-9Y-NXf"/>
+                                            <constraint firstItem="KTJ-Fk-taz" firstAttribute="leading" secondItem="v0o-dm-psg" secondAttribute="leading" constant="100" id="lEl-15-8pJ"/>
                                             <constraint firstAttribute="trailing" secondItem="NkQ-61-QvR" secondAttribute="trailing" constant="40" id="lnO-Q6-GMa"/>
                                             <constraint firstAttribute="bottom" secondItem="I1j-kf-T4g" secondAttribute="bottom" constant="80" id="oMR-nw-LOT"/>
                                             <constraint firstAttribute="trailing" secondItem="er8-7n-Pag" secondAttribute="trailing" constant="40" id="oYJ-03-Olz"/>
@@ -196,6 +209,7 @@
                         <outlet property="detailText" destination="Wuo-wK-5Gj" id="y6r-am-H7H"/>
                         <outlet property="idLabel" destination="er8-7n-Pag" id="6TG-5X-OR6"/>
                         <outlet property="likeLabel" destination="UbF-31-vmb" id="7lE-HM-Hg8"/>
+                        <outlet property="previewButton" destination="KTJ-Fk-taz" id="K0n-ad-wQD"/>
                         <outlet property="publisherLabel" destination="NkQ-61-QvR" id="1aw-sR-ldH"/>
                         <outlet property="saveButton" destination="I1j-kf-T4g" id="Isu-gK-yiP"/>
                         <outlet property="titleLabel" destination="oqU-RY-alu" id="GbD-yn-kMk"/>
@@ -227,7 +241,7 @@
         <!--Favorite View Controller-->
         <scene sceneID="HgH-u5-gub">
             <objects>
-                <viewController storyboardIdentifier="FavoriteViewController" id="V8Q-qB-IJ0" customClass="FavoriteViewController" customModule="DayEight_GoogleBooksSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteViewController" id="V8Q-qB-IJ0" customClass="FavoriteViewController" customModule="GoogleBooksMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7UM-cK-QfC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +250,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteViewCell" rowHeight="200" id="klo-f7-4rT" customClass="FavoriteViewCell" customModule="DayEight_GoogleBooksSearch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteViewCell" rowHeight="200" id="klo-f7-4rT" customClass="FavoriteViewCell" customModule="GoogleBooksMVVM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="klo-f7-4rT" id="ztP-hC-hAh">

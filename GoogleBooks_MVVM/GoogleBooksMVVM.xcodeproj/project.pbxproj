@@ -27,6 +27,7 @@
 		70F60F8C228EF8F100463BE7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F60F8B228EF8F100463BE7 /* SearchViewModel.swift */; };
 		70F60F8E228EFDA800463BE7 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F60F8D228EFDA800463BE7 /* BookService.swift */; };
 		70F60F92228F4AF300463BE7 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F60F91228F4AF300463BE7 /* FavoriteViewModel.swift */; };
+		70F60F96228FB51500463BE7 /* UIVCex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F60F95228FB51500463BE7 /* UIVCex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		70F60F8B228EF8F100463BE7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		70F60F8D228EFDA800463BE7 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		70F60F91228F4AF300463BE7 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		70F60F95228FB51500463BE7 /* UIVCex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVCex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		70B061E82285BD4100D69271 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				70F60F95228FB51500463BE7 /* UIVCex.swift */,
 				70B061F12285C4A200D69271 /* SearchVCex.swift */,
 				70B061FC2286950500D69271 /* FavoriteVCex.swift */,
 			);
@@ -307,6 +310,7 @@
 				70B061EA2285BD6500D69271 /* DetailViewController.swift in Sources */,
 				70B061E72285BD0500D69271 /* SearchViewController.swift in Sources */,
 				70B061F622862E3300D69271 /* DownloadImages.swift in Sources */,
+				70F60F96228FB51500463BE7 /* UIVCex.swift in Sources */,
 				70B061FB2286926100D69271 /* FavoriteViewCell.swift in Sources */,
 				70B061EC2285BDD000D69271 /* FavoriteViewController.swift in Sources */,
 				70F60F92228F4AF300463BE7 /* FavoriteViewModel.swift in Sources */,

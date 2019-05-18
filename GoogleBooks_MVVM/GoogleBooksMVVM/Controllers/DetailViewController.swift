@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailText: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var previewButton: UIButton!
     
     static let identifier = "DetailViewController"
     
@@ -29,7 +30,19 @@ class DetailViewController: UIViewController {
         setupView()
     }
   
+    // preview button tapped
+    @IBAction func previewButtonTapped(_ sender: UIButton) {
+        // open browser
+        let previewLink = book.previewLink
+        if previewLink == "" {
+            showAlert(message: "Preview is not available at this moment.")
+        } else {
+            let url = NSURL(string: previewLink) as! URL
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
+    // save button tapped
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         // save book to CoreData
         coreDataService.isExist(self.book, "buttonTapped") { label in
@@ -47,8 +60,7 @@ class DetailViewController: UIViewController {
     // helping functions
     func setupView() {
         saveButton.layer.cornerRadius = saveButton.layer.frame.size.height / 2
-
-//        likeLabel.isHidden = false
+        previewButton.layer.cornerRadius = previewButton.layer.frame.size.height / 2
         
         guard let myBook = book else {
             return

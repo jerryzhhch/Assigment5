@@ -18,6 +18,7 @@ class Book {
     let publisher : String
     let description : String
     let imageUrl : String
+    let previewLink : String
     
     init?(json: [String:Any]) {
         // get id
@@ -97,6 +98,16 @@ class Book {
             imageUrl = "defaultImage"
         }
         
+        // get description, if there is a "previewLink" key
+        let previewLinkExist = infoDict["previewLink"] != nil
+        let previewLink : String
+        if previewLinkExist {
+            previewLink = infoDict["previewLink"] as! String
+        }
+        else {
+            previewLink = ""
+        }
+        
         self.id = id
         self.title = title
         self.subtitle = subtitle
@@ -104,6 +115,7 @@ class Book {
         self.publisher = publisher
         self.description = description
         self.imageUrl = imageUrl
+        self.previewLink = previewLink
     }
     
     init?(entity: NSManagedObject) {
@@ -115,6 +127,7 @@ class Book {
         let publisher = entity.value(forKey: "publisher") as! String
         let description = entity.value(forKey: "description") as! String
         let imageUrl = entity.value(forKey: "imageUrl") as! String
+        let previewLink = entity.value(forKey: "previewLink") as! String
         
         self.id = id
         self.title = title
@@ -123,6 +136,7 @@ class Book {
         self.publisher = publisher
         self.description = description
         self.imageUrl = imageUrl
+        self.previewLink = previewLink
     }
     
     init(_ core: BookData) {
@@ -133,5 +147,6 @@ class Book {
         self.publisher = core.publisher!
         self.description = core.dsp!
         self.imageUrl = core.imageUrl!
+        self.previewLink = core.previewLink!
     }
 }

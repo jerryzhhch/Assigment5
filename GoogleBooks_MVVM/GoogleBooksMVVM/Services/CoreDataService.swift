@@ -41,7 +41,7 @@ final class CoreDataService {
         record.setValue(book.publisher, forKey: "publisher")
         record.setValue(book.description, forKey: "dsp")
         record.setValue(book.imageUrl, forKey: "imageUrl")
-        
+        record.setValue(book.previewLink, forKey: "previewLink")
         // save changes on Context
         saveContext("<\(book.title)> was saved.")
     }
